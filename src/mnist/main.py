@@ -22,11 +22,11 @@ async def create_upload_file(file: UploadFile):
 
     # creates directories, skips if exists
     os.makedirs(upload_dir, exist_ok = True)
-    print(f"[INFO] Checked/created path: {upload_dir}")
+    print(f"[INFO] Checked and/or created path: {upload_dir}")
 
     with open(file_full_path, "wb") as f:
         f.write(img)
-        print(f"[INFO] Successfully wrote file {file_full_path}")
+        print(f"[INFO] Successfully wrote file to: {file_full_path}")
 
 # save file path DB INSERT
 # tablename: image_processing
