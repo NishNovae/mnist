@@ -15,15 +15,18 @@ async def create_upload_file(file: UploadFile):
 # save file
     img = await file.read()
     file_name = file.filename
-# check and create dir
 
     import os
     upload_dir = os.getcwd() + "/photo/"
-
     file_full_path = os.path.join(upload_dir, file_name)
-    print(f"DEBUG: file_full_path = {file_full_path}")
+
+    # creates directories, skips if exists
+    os.makedirs(upload_dir, exist_ok = True)
+    print(f"[INFO] Checked/created path: {upload_dir}")
+
     with open(file_full_path, "wb") as f:
         f.write(img)
+        print(f"[INFO] Successfully wrote file {file_full_path}")
 
 # save file path DB INSERT
 # tablename: image_processing
