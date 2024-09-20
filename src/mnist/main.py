@@ -15,6 +15,7 @@ async def create_upload_file(file: UploadFile):
 # save file
     img = await file.read()
     file_name = file.filename
+    file_ext = file.content_type.split('/')[-1] # "image/png"
 
     import os
     upload_dir = os.getcwd() + "/photo/"
