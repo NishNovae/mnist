@@ -51,7 +51,7 @@ def run():
   # STEP 2
   # RANDOM 으로 0 ~ 9 중 하나 값을 prediction_result 컬럼에 업데이트
   # 동시에 prediction_model, prediction_time 도 업데이트
-  pred_resutl = prediction(file_path, num) 
+  pred_result = prediction(file_path, num) 
 
   # STEP 3
   # LINE 으로 처리 결과 전송
@@ -64,7 +64,7 @@ def send_line_noti(file_name, pred_result):
     token = os.getenv('LINE_NOTI_TOKEN', 'NULL')
     h = {'Authorization':'Bearer ' + token}
     msg = {
-       "message" : f"{file_name} => {presutl}"
+       "message" : f"{file_name} => {pred_result}"
     }
     requests.post(api, headers=h , data=msg)
     print("SEND LINE NOTI")
