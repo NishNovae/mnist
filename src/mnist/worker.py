@@ -27,10 +27,10 @@ def prediction(file_path, num):
         prediction_time=%s
     WHERE num=%s
     """
-    presult = random.randint(0, 9)
-    dml(sql, presult, jigeum.seoul.now(), num)
+    pred_result = random.randint(0, 9)
+    dml(sql, pred_result, jigeum.seoul.now(), num)
 
-    return presult
+    return pred_result
 
 
 def run():
@@ -55,11 +55,11 @@ def run():
 
   # STEP 3
   # LINE 으로 처리 결과 전송
-  send_line_noti(file_name, presutl)
+  send_line_noti(file_name, pred_result)
 
   print(jigeum.seoul.now())
 
-def send_line_noti(file_name, presutl):
+def send_line_noti(file_name, pred_result):
     api = "https://notify-api.line.me/api/notify"
     token = os.getenv('LINE_NOTI_TOKEN', 'NULL')
     h = {'Authorization':'Bearer ' + token}
