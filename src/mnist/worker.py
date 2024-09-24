@@ -41,7 +41,7 @@ def run():
   job = get_job_img_task()
     
   if job is None:
-      print(f"{jigeum.seoul.now()} - jos is None")
+      print(f"{jigeum.seoul.now()} - job is None")
       return 
 
   num = job['num']
