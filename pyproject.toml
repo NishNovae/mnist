@@ -1,6 +1,6 @@
 [project]
 name = "mnist"
-version = "0.4.1"
+version = "0.4.2"
 description = "MNIST"
 authors = [
     {name = "NishNovae", email = "raecrowned@gmail.com"},
@@ -21,6 +21,8 @@ license = {text = "MIT"}
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
+[project.scripts]
+ml-worker = "mnist.worker:run"
 
 [tool.pdm]
 distribution = true

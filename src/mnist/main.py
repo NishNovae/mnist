@@ -31,7 +31,7 @@ async def create_upload_file(file: UploadFile):
     file_name = file.filename
     file_ext = file.content_type.split('/')[-1] # "image/png" > "png"
 
-    upload_dir = os.getcwd() + "/photo/"
+    upload_dir = os.getenv('UPLOAD_DIR', '/home/nishtala/code/mnist/img')
     os.makedirs(upload_dir, exist_ok = True)
     print(f"[INFO] Checked and/or created path: {upload_dir}")
 
