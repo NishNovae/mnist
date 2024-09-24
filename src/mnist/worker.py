@@ -51,7 +51,7 @@ def run():
   # STEP 2
   # RANDOM 으로 0 ~ 9 중 하나 값을 prediction_result 컬럼에 업데이트
   # 동시에 prediction_model, prediction_time 도 업데이트
-  presutl = prediction(file_path, num) 
+  pred_resutl = prediction(file_path, num) 
 
   # STEP 3
   # LINE 으로 처리 결과 전송

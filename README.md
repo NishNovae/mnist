@@ -21,3 +21,8 @@ sudo docker run -d --name mnist10 \
 -e UPLOAD_DIR=/home/ubuntu/images/n10 \
 -p 8010:8080 say7777/mnist
 ```
+
+```
+sudo docker exec -it mnist10 bash
+```
+
